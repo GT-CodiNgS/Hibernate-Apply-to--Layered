@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="490.0" prefWidth="773.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.pos.controller.ItemFormController">
+   <children>
+      <ImageView fitHeight="49.0" fitWidth="56.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#backToHome" pickOnBounds="true">
+         <image>
+            <Image url="@../asserts/img-home.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label layoutX="307.0" layoutY="14.0" text="Item Form">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtItemCode" layoutX="14.0" layoutY="98.0" promptText="item Code">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtDescription" layoutX="188.0" layoutY="98.0" prefHeight="29.0" prefWidth="281.0" promptText="description">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtQtyOnHand" layoutX="481.0" layoutY="98.0" prefHeight="29.0" prefWidth="154.0" promptText="qtyOnHand">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtPrice" layoutX="641.0" layoutY="98.0" prefHeight="29.0" prefWidth="115.0" promptText="price">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <Button layoutX="686.0" layoutY="24.0" mnemonicParsing="false" onAction="#newOnAction" prefHeight="29.0" prefWidth="71.0" text="New +" textFill="#612323">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="686.0" layoutY="136.0" mnemonicParsing="false" onAction="#saveOnAction" prefHeight="29.0" prefWidth="71.0" text="Save" textFill="#612323">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <TableView fx:id="tableItem" layoutX="14.0" layoutY="179.0" prefHeight="302.0" prefWidth="742.0">
+         <columns>
+            <TableColumn fx:id="colCode" prefWidth="97.0" text="Item Code" />
+            <TableColumn fx:id="colDescription" prefWidth="137.0" text="Description" />
+            <TableColumn fx:id="colqty" prefWidth="137.0" text="QTY On Hand" />
+            <TableColumn fx:id="colPrice" prefWidth="208.0" text="Price" />
+            <TableColumn fx:id="colOperate" prefWidth="162.0" text="Operate" />
+         </columns>
+      </TableView>
+      <TextField fx:id="txtSearch" layoutX="14.0" layoutY="138.0" onAction="#getDataOnAction" prefHeight="25.0" prefWidth="649.0" promptText="Search">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>

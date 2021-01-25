@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="620.0" prefWidth="451.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.pos.controller.MainFormController">
+   <children>
+      <ImageView fitHeight="461.0" fitWidth="529.0" layoutX="7.0" layoutY="298.0">
+         <image>
+            <Image url="@../asserts/undraw_empty_cart_co35.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="141.0" prefHeight="59.0" prefWidth="245.0" text="ThogaKade" AnchorPane.rightAnchor="155.0">
+         <font>
+            <Font name="System Bold" size="41.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="92.0" fitWidth="102.0" layoutX="294.0" layoutY="81.0" onMouseClicked="#openItemForm" pickOnBounds="true">
+         <image>
+            <Image url="@../asserts/List_96px.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label layoutX="149.0" layoutY="186.0" prefHeight="21.0" prefWidth="88.0" text="Customers" />
+      <Label layoutX="327.0" layoutY="186.0" prefHeight="21.0" prefWidth="37.0" text="Item" />
+      <ImageView layoutX="141.0" layoutY="79.0" onMouseClicked="#openCustomerForm">
+         <image>
+            <Image url="@../asserts/User_96px.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

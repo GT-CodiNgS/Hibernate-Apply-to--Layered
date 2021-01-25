@@ -1,0 +1,71 @@
+package lk.ijse.pos.dao.custom.impl;
+
+import lk.ijse.pos.dao.custom.CustomerDAO;
+
+import lk.ijse.pos.entity.Customer;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import util.HibernateUtil;
+
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+public class CustomerDAOImpl implements CustomerDAO {
+
+
+    @Override
+    public boolean add(Customer entity) throws Exception {
+        Session session = HibernateUtil.getSession();
+        Transaction transaction = session.beginTransaction();
+        session.save(entity);
+        transaction.commit();
+        session.close();
+        return true;
+    }
+
+    @Override
+    public boolean update(Customer entity) throws Exception {
+        Session session = HibernateUtil.getSession();
+        Transaction transaction = session.beginTransaction();
+        session.update(entity);
+        transaction.commit();
+        session.close();
+        return false;
+    }
+
+    @Override
+    public boolean delete(String s) throws Exception {
+        Session session = HibernateUtil.getSession();
+        Transaction transaction = session.beginTransaction();
+        Customer customer = session.get(Customer.class,s);
+        session.delete(customer);
+        transaction.commit();
+        return false;
+    }
+
+    @Override
+    public Customer search(String s) throws Exception {
+        Session session = HibernateUtil.getSession();
+        Transaction transaction = session.beginTransaction();
+        Customer customer = session.get(Customer.class,s);
+        transaction.commit();
+        session.close();
+        return customer;
+    }
+
+    @Override
+    public List<Customer> getAll() throws Exception {
+        Session session = HibernateUtil.getSession();
+        Transaction transaction = session.beginTransaction();
+        Query query = session.createNamedQuery("FROM Customer");
+        List list = query.list();
+        transaction.commit();
+        session.close();
+        return list;
+    }
+
+
+
+}
